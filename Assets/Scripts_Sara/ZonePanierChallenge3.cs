@@ -1,9 +1,16 @@
 using UnityEngine;
 
-public class ZoneResetBalle : MonoBehaviour
+public class ZonePanierChallenge3 : MonoBehaviour
 {
     [SerializeField] private Rigidbody[] balles;
     [SerializeField] private Transform positionDepart;
+
+    private GestionScore gestionScore;
+
+    private void Start()
+    {
+        gestionScore = FindFirstObjectByType<GestionScore>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -11,6 +18,8 @@ public class ZoneResetBalle : MonoBehaviour
         {
             if (other.attachedRigidbody == balle)
             {
+                gestionScore.AjouterPoint();
+
                 balle.linearVelocity = Vector3.zero;
                 balle.angularVelocity = Vector3.zero;
 

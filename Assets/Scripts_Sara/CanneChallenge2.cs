@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Quille : MonoBehaviour
+public class CanneChallenge2 : MonoBehaviour
 {
     [SerializeField] private GameObject visual;
 
@@ -17,8 +17,7 @@ public class Quille : MonoBehaviour
         rotationDepart = transform.eulerAngles;
 
         rb = GetComponent<Rigidbody>();
-
-        gestionScore = FindFirstObjectByType<GestionScore>(); // flemme de mettre un par un les scripts
+        gestionScore = FindFirstObjectByType<GestionScore>();
     }
 
     private void Update()
